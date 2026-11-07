@@ -38,16 +38,22 @@ class Sudoku:
         # YOUR CODE HERE
         return cls(sudoku)
 
+   
     @classmethod
-    def from_model(cls, model: clingo.solving.Model) -> "Sudoku":
+    def from_str(cls, s: str) -> "Sudoku":
         sudoku = {}
-        
-        for atom in model.symbols(shown=True):
-            if atom.name == "sudoku" and len(atom.arguments) == 3:
-                row = atom.arguments[0].number
-                col = atom.arguments[1].number
-                value = atom.arguments[2].number
+        row = 0
 
-                sudoku[(row, col)] = value
+        for line in s.splitlines():
+            cells = line.split()
+
+            if not cells:
+                continue
+
+            row += 1
+
+            for col, value in enumerate(cells, start=1):
+                if value != "-":
+                    sudoku[(row, col)] = int(value)
 
         return cls(sudoku)
