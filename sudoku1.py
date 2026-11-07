@@ -42,6 +42,10 @@ class ClingoApp(Application):
         control.ground([("base", [])])
         control.solve()
 
+    
+   
+    
+    
     def print_model(self, model, printer):
         atoms = sorted(
             str(atom) for atom in model.symbols(shown=True)
@@ -49,5 +53,8 @@ class ClingoApp(Application):
         print(" ".join(atoms))
 
 
+
+
+
 if __name__ == "__main__":
-    sys.exit(clingo_main(ClingoApp(), sys.argv[1:]))
+    clingo_main(ClingoApp(), sys.argv[1:])
