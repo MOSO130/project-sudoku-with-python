@@ -27,13 +27,13 @@ class ClingoApp(Application):
                R1 != R2.
 
             :- sudoku(R1,C1,N), sudoku(R2,C2,N),
-               (R1-1)/3 == (R2-1)/3,
-               (C1-1)/3 == (C2-1)/3,
+               (R1-1)/3 = (R2-1)/3,
+               (C1-1)/3 = (C2-1)/3,
                R1 != R2.
 
             :- sudoku(R1,C1,N), sudoku(R2,C2,N),
-               (R1-1)/3 == (R2-1)/3,
-               (C1-1)/3 == (C2-1)/3,
+               (R1-1)/3 = (R2-1)/3,
+               (C1-1)/3 = (C2-1)/3,
                C1 != C2.
 
             #show sudoku/3.
