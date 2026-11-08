@@ -1,0 +1,1 @@
+initial(R,C,N) :- (R,C,N) = @initial().
